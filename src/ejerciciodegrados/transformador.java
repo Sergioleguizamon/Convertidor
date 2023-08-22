@@ -5,6 +5,8 @@
  */
 package ejerciciodegrados;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author alumno
@@ -79,6 +81,17 @@ public class transformador extends javax.swing.JFrame {
 
     private void jIngresarGradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIngresarGradosActionPerformed
         // TODO add your handling code here:
+        try{
+            if(jIngresarGrados.getText().equals("53.6")){
+                jConvertir.setText("ya se hizo la conversion");
+            } else {
+                JOptionPane.showInputDialog(this, "no se hizo la conversion");
+            }
+            
+        }catch(NumberFormatException e){
+             JOptionPane.showInputDialog(this, "ya catcheamos la exception");
+             jConvertir.requestFocus();    
+        }
     }//GEN-LAST:event_jIngresarGradosActionPerformed
 
     /**
