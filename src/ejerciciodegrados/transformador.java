@@ -30,12 +30,15 @@ public class transformador extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jIngresarGrados = new javax.swing.JTextField();
         jConvertir = new javax.swing.JButton();
-        jLResultado = new javax.swing.JLabel();
+        jTResultado = new javax.swing.JTextField();
 
         jTextField1.setText("jTextField1");
+
+        jTextField2.setText("jTextField2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,22 +58,27 @@ public class transformador extends javax.swing.JFrame {
             }
         });
 
+        jTResultado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTResultadoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jConvertir)
+                .addGap(141, 141, 141))
             .addGroup(layout.createSequentialGroup()
                 .addGap(173, 173, 173)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jIngresarGrados))
+                    .addComponent(jIngresarGrados)
+                    .addComponent(jTResultado))
                 .addContainerGap(132, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jConvertir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(141, 141, 141))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,9 +89,9 @@ public class transformador extends javax.swing.JFrame {
                 .addComponent(jIngresarGrados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(jConvertir)
-                .addGap(29, 29, 29)
-                .addComponent(jLResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addGap(46, 46, 46)
+                .addComponent(jTResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         pack();
@@ -91,19 +99,26 @@ public class transformador extends javax.swing.JFrame {
 
     private void jIngresarGradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIngresarGradosActionPerformed
         // TODO add your handling code here:
-        try{
-           int Celsius = 0; 
-           double Fahrenheit = Celsius*9/5+32;
-           jConvertir.setText("ya se hizo la conversion");
-        }catch(NumberFormatException e){
-             JOptionPane.showInputDialog(this, "ya catcheamos la exception");
-             jConvertir.requestFocus();    
-        }
+       
     }//GEN-LAST:event_jIngresarGradosActionPerformed
 
     private void jConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConvertirActionPerformed
         // TODO add your handling code here:
+         try{
+           String Celsius =  jIngresarGrados.getText(); 
+           int Num = Integer.parseInt(Celsius);    
+           double Fahrenheit = Num*9/+32;
+           jIngresarGrados.getText().equals(Num);
+          jTResultado.setText(String.valueOf(Fahrenheit)); 
+        }catch(NumberFormatException e){
+             JOptionPane.showInputDialog(this, "ya catcheamos la exception");
+             jConvertir.requestFocus();    
+        }
     }//GEN-LAST:event_jConvertirActionPerformed
+
+    private void jTResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTResultadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTResultadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,8 +158,9 @@ public class transformador extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jConvertir;
     private javax.swing.JTextField jIngresarGrados;
-    private javax.swing.JLabel jLResultado;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTResultado;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
