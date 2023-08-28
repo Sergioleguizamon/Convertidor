@@ -31,6 +31,10 @@ public class transformador extends javax.swing.JFrame {
 
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jIngresarGrados = new javax.swing.JTextField();
         jConvertir = new javax.swing.JButton();
@@ -39,6 +43,15 @@ public class transformador extends javax.swing.JFrame {
         jTextField1.setText("jTextField1");
 
         jTextField2.setText("jTextField2");
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        jRadioButtonMenuItem1.setSelected(true);
+        jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -159,6 +172,10 @@ public class transformador extends javax.swing.JFrame {
     private javax.swing.JButton jConvertir;
     private javax.swing.JTextField jIngresarGrados;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JTextField jTResultado;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
